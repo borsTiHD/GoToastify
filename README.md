@@ -6,6 +6,7 @@ A simple Go CLI application that creates Windows toast notifications.
 
 - Display toast notifications from the command line
 - Customize title, message, duration, and app ID
+- Display images or icons in notifications
 - Simple and intuitive CLI interface
 
 ## Installation
@@ -39,7 +40,7 @@ go-toastify show -title "Important" -message "This is important!"
 
 With all options:
 ```bash
-go-toastify show -title "Alert" -message "Check this out" -duration 10 -app-id "MyApp"
+go-toastify show -title "Alert" -message "Check this out" -duration 10 -image "C:\path\to\icon.png"
 ```
 
 ### Show version
@@ -63,7 +64,7 @@ Flags:
 - `-title string` - Title of the notification (default: "Notification")
 - `-message string` - Message content (required)
 - `-duration int` - Duration in seconds to display (default: 5)
-- `-app-id string` - Application ID for notification (default: "GoToastify")
+- `-image string` - Path to an image/icon file to display in the notification
 
 ## Examples
 
@@ -77,8 +78,11 @@ go-toastify show -title "Build Complete" -message "Your build finished at 3:45 P
 # Longer duration notification
 go-toastify show -title "Reminder" -message "Don't forget the meeting" -duration 15
 
-# Custom app ID
-go-toastify show -title "MyApp" -message "Task finished" -app-id "MyCustomApp"
+# Notification with image/icon
+go-toastify show -title "Alert" -message "Important update" -image "C:\path\to\icon.png"
+
+# Notification with all options
+go-toastify show -title "Success" -message "Task completed" -duration 10 -image "C:\icons\success.png"
 ```
 
 ## License
